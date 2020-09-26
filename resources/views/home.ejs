@@ -1,19 +1,22 @@
 
-    <section class="hero py-16">
-        <div class="container mx-auto flex items-center justify-between">
+    <section class="hero py-16" >
+        <div class="container mx-auto flex items-center justify-between" ; style="align-items: center;">
             <div class="w-1/2">
                 <h6 class="text-lg"><em>Are you hungry??</em></h6>
                 <h1 class="text-6xl font-bold">Don't Wait!</h1>
+                <p class="text-2xl font-bold">
+                    Best pizza availaible to satisfy your cravings
+                </p>
                 <button class="px-6 py-2 rounded-full text-white font-bold mt-4 btn-primary">Order Now</button>
             </div>
-            <div class="w-1/2">
-                <img src="/img/hero-pizza.png" alt="">
+            <div class="w-1/2" >
+                <img src="/img/hero-pizza.png" alt="" style="margin-top: 41px;">
             </div>
         </div>
     </section>
     <section class="menu container mx-auto py-8">
         <h1 class="txt-xl font-bold mb-8">All Pizzas</h1>
-        <div class="grid grid-cols-4 col-gap-12 row-gap-16">
+        <div class="grid grid-cols-4 col-gap-20 row-gap-16" style="display: flex; flex-wrap: wrap;">
 
             <% pizzas.forEach(function(pizza){%>
                 <div class="w-64">
@@ -32,10 +35,32 @@
                     </div>
                 </div>
            <% })%>
+
+        </div>
             
            
         </div>
         <!-- <button id="scrollTopBtn" title="Scroll to Top" type="button"  style="display: inline-block;">▲</button> -->
     </section>
+    <!-- <div class="footer">
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h1 class="logo-text"><span>Pizzeteria</span></h1>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos repellendus placeat cumque, aut nesciunt adipisci exercitationem ipsam, nemo consequuntur quasi dolor voluptatem, recusandae perspiciatis? Nisi tenetur velit quibusdam saepe laudantium?</p>
+               <div class="contact">
+                   <span><i class="fas fa-phone">&nbsp; 723873877328</i></span>
+               </div>
+            
+            </div>
+            <div class="footer-section links"></div>
+            <div class="footer-section contact-form"></div>
+        </div>
+        <div class="footer-bottom">
+            &copy;Pizzeteria
+        </div>
+    </div> -->
+
+
+    
     
   

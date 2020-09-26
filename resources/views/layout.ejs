@@ -5,22 +5,62 @@
     <title>Pizza App</title>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
     <link rel="stylesheet" href="/css/app.css">
+    <style>
+        html,body{
+            height: 100%;
+        }
+        .footer{
+    background: #303036;
+    color: #d3d3d3;
+    height: 400px;
+    position: relative;
+}
+.footer .footer-bottom{
+    background: #343a30;
+    color: #686868;
+    height: 50px;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding-top: 20px;
+}
+.footer .footer-content{
+    border: 2px solid red;
+    height: 350px;
+    display: flex;
+}
+.footer .footer-content .footer-section{
+
+    flex: 1;
+    padding: 25px;
+    border: 1px solid white;
+}
+    </style>
 </head>
 <body>
     
-    <nav class="container mx-auto flex items-center justify-between py-4">
-        <div>
-            <a href="/"><img src="/img/logo.png" alt="logo"></a>
+    <nav class="  flex items-center justify-between py-4" style="background-color: rgb(31, 168, 13); color: white; position: fixed;top: 0;width: 100%;height: 50px; z-index: 5; border-radius: 2px;">
+        <div class="flex items-center jutify-between" style="margin-left: 50px;">
+            <a href="/"><img src="/img/logo.png" alt="logo" style="height: 34px;"></a>
+           <a href="/"><span class="font-bold text-lg ml-1">Pizzeteria</span></a>
         </div>
         <div>
-            <ul class="flex items-center">
-                <li class="ml-6"><a href="#">Menu</a></li>
+            <ul class="flex items-center" style="margin-right: 100px; display: flex;flex-wrap: wrap;">
+                <li class="ml-6"><a href="/">Menu</a></li>
                 <li class="ml-6"><a href="#">Offers</a></li>
+                <% if(user&&user.role==='admin'){%>
+                    <li class="ml-6"><a href="/admin/orders">Admin Section</a></li> 
+                <%}else{%>
+                <li class="ml-6"><a href="/customer/orders">My Orders</a></li>
+                <%}%>
                 <% if(user){%>
-                    <li class="ml-6">
+                    <li class="ml-6 mt-4">
                         <form  id="logout" action="/logout" method="POST">
-                            <a href="#"  onclick="document.getElementById('logout').submit()">Logout</a>
+                            <a  class="mt-5" href="#"  onclick="document.getElementById('logout').submit()">Logout</a>
                         </form>
                     </li> 
                      
@@ -35,7 +75,24 @@
             </ul>
         </div>
     </nav>
+
+    
+
+
     <%-body %>
+
+    <!-- <div class="footer">
+        <div class="footer-content">
+            <div class="footer-section about"></div>
+            <div class="footer-section links"></div>
+            <div class="footer-section contact-form"></div>
+        </div>
+        <div class="footer-bottom">
+            &copy;Pizzeteria
+        </div>
+    </div> -->
+
+    <script src="/socket.io/socket.io.js"></script>
     
     <script src="/js/app.js"></script>
 </body>
