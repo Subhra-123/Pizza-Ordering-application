@@ -183,6 +183,24 @@ div.status{
     margin-top: 8px;
 }
 
+@media(max-width:1060px){
+    nav{
+        max-width: 1000%;
+    }
+    table{
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}
+@media(max-width:768px)
+{
+    .status-box ul li span:before{
+        font-size: 34px;
+
+    }
+}
+
 // footer
 
 // .footer{
